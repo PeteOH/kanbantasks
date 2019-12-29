@@ -1,42 +1,33 @@
-# Outlook Kanban Taskboard aka **JanBan**
+# Outlook Tasks Kanban Taskboard previously **JanBan**
 
-In case you found this repository on Github:
+Note that this repository is based the janban found at [Gitlab](https://gitlab.com/janware/janban).
 
-_Note that this repository is hosted on [Gitlab](https://gitlab.com/janware/janban). The Github repository is a mirror._
-_Please follow the Gitlab link to report issues or to do a pull request._
+The Outlook Tasks KanBan is a kanban board style view for Outlook Tasks.
 
-The JanBan Outlook Taskboard is a kanban board style view for Outlook Tasks.
+The primary changes of this version are:
 
-This project is based on [Evren varol's Outlook Taskboard](https://github.com/evrenvarol/outlook-taskboard).
-I have added a lot of features, customization and configuration options.
+### Placed the tasks back into a single folder
+This was to allow tasks to be assigned by someone else. It also allows us to use SharePoint Tasks (which does not have sub-folders)
 
-![JanBan board](http://janware.nl/janban/janban.png)
+### Enable the use of other Tasks folders
+Using the Outlook Store and Folder you can customise which list to use.
+This can be a 
+ * Shared Task List
+ * Sharepoint Task List
+ * Your own task list
+Visible in the App Configuration Section (Sharepoint Lists Folder and Task List
+(also has a link to the task list URL)
 
-The main features of JanBan are:
-
-### Moving Tasks between task lanes
-![Moving Tasks](http://janware.nl/janban/movingtasks.gif)
-
-### Filtering Tasks
-![Filtering](http://janware.nl/janban/filtering.gif)
-
-### Configuration
-![Configuration](http://janware.nl/janban/config.gif)
-
-### Support Mailbox
-![Support](http://janware.nl/janban/support.gif)
+### Filtering Tasks - by "Assigned to"
+Added the filter
 
 ### Platforms supported
-Only tested with Outlook 2013 and 2016 running on Windows 8.1/10.
-It may also work with earlier Outlook versions, and possibly work with Windows 7.
+Only tested with Outlook 2016 running on Windows 10.
+It may also work with earlier Outlook versions
 
 ## Basic Setup
 
-Go to [the JanBan application page](https://janware.nl/janban), and follow the instructions.
+Clone [the kanbantasks github page](https://github.com/PeteOH/kanbantasks), and clone it to $USERPROFILE\janban
+Then run install.cmd.
 
-That's all !!
 
-## Local Setup (advanced)
-
-For a local setup, refer to the instructions on http://papasmurf.nl/janban
-"# kanbantasks" 
