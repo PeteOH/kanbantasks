@@ -27,7 +27,7 @@ It may also work with earlier Outlook versions
 
 ## Basic Setup
 
-Clone [the kanbantasks github page](https://github.com/PeteOH/kanbantasks), and clone it to $USERPROFILE\janban
+Clone [the kanbantasks github page](https://github.com/PeteOH/kanbantasks), and clone it to %USERPROFILE%\janban
 Then run install.cmd.
 
 
