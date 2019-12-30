@@ -25,9 +25,11 @@ Added the filter
 Only tested with Outlook 2016 running on Windows 10.
 It may also work with earlier Outlook versions
 
-## Basic Setup
+## INSTALL
 
-Clone [the kanbantasks github page](https://github.com/PeteOH/kanbantasks), and clone it to %USERPROFILE%\janban
+Clone [the kanbantasks github page](https://github.com/PeteOH/kanbantasks), 
 Then run install.cmd.
 
+This will point Outlook Today to use the kanban.html in this folder.
 
+To update - use git pull
