@@ -973,10 +973,9 @@ tbApp.controller('taskboardController', function($scope, $filter, $http) {
 			// remove empty lines, cut off text if length > limit
 			//str = str.replace(/^(?=\n)$|^\s*|\s*$|\n\n+/gm, '');
 
-			str = str.replace(/\r\n/g, '<br>')
-			//while (str.search('\r\n') >= 0) {
-			//	str = str.replace('\r\n', '<br>');
-			//}
+			while (str.search('\r\n') >= 0) {
+				str = str.replace('\r\n', '<br>');
+			}
 
 			if (str.length > limit) {
 				str = str.substring(0, str.lastIndexOf(' ', limit));
