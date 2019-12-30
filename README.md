@@ -25,9 +25,12 @@ Added the filter
 Only tested with Outlook 2016 running on Windows 10.
 It may also work with earlier Outlook versions
 
-## Basic Setup
+## INSTALL
 
-Clone [the kanbantasks github page](https://github.com/PeteOH/kanbantasks), and clone it to %USERPROFILE%\janban
-Then run install.cmd.
+Clone [the kanbantasks github page](https://github.com/intersystems-au/kanbantasks), 
+Then run install.cmd
 
+This will configure outlook to loo at this folder.
 
+To Update at any time - run: git pull
+(Your configuration is in the journal files which are not changed by git)
