@@ -30,7 +30,7 @@ It may also work with earlier Outlook versions
 Clone [the kanbantasks github page](https://github.com/intersystems-au/kanbantasks), 
 Then run install.cmd
 
-This will configure outlook to loo at this folder.
+This will configure outlook to look at this folder.
 
 To Update at any time - run: git pull
 (Your configuration is in the journal files which are not changed by git)
