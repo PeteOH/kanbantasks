@@ -27,9 +27,10 @@ It may also work with earlier Outlook versions
 
 ## INSTALL
 
-Clone [the kanbantasks github page](https://github.com/PeteOH/kanbantasks), 
-Then run install.cmd.
+Clone [the kanbantasks github page](https://github.com/intersystems-au/kanbantasks), 
+Then run install.cmd
 
-This will point Outlook Today to use the kanban.html in this folder.
+This will configure outlook to loo at this folder.
 
-To update - use git pull
+To Update at any time - run: git pull
+(Your configuration is in the journal files which are not changed by git)
