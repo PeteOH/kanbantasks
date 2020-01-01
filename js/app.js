@@ -220,8 +220,8 @@ tbApp.controller('taskboardController', function($scope, $filter, $http) {
 
 		getConfig();
 		getState();
-		getVersion();
-		pingUsage();
+		//getVersion();
+		//pingUsage();
 
 		outlookCategories = getOutlookCategories();
 		outlookCategories.names.forEach(function(name) {
@@ -353,7 +353,7 @@ tbApp.controller('taskboardController', function($scope, $filter, $http) {
 			$scope.applyFilters();
 
 			// clean up Completed Tasks
-			if ($scope.config.COMPLETED.ACTION == 'ARCHIVE' || $scope.config.COMPLETED.ACTION == 'DELETE') {
+			if ($scope.config.COMPLETED.ACTION == 'HIDE' || $scope.config.COMPLETED.ACTION == 'ARCHIVE' || $scope.config.COMPLETED.ACTION == 'DELETE') {
 				var i;
 				var tasks = $scope.taskFolders[DONE].tasks;
 				var count = tasks.length;
@@ -361,6 +361,13 @@ tbApp.controller('taskboardController', function($scope, $filter, $http) {
 					try {
 						var days = Date.daysBetween(tasks[i].completeddate, new Date());
 						if (days > $scope.config.COMPLETED.AFTER_X_DAYS) {
+							if ($scope.config.COMPLETED.ACTION == 'HIDE') {
+								$scope.hideTask(
+									tasks[i],
+									$scope.taskFolders[DONE].tasks,
+									$scope.taskFolders[DONE].filteredTasks
+								);
+							}
 							if ($scope.config.COMPLETED.ACTION == 'ARCHIVE') {
 								$scope.archiveTask(
 									tasks[i],
@@ -1147,6 +1154,17 @@ tbApp.controller('taskboardController', function($scope, $filter, $http) {
 		}
 	};
 
+	$scope.hideTask = function(item, sourceArray, filteredSourceArray) {
+		try {
+
+			// just locate and remove the item from the models
+			removeItemFromArray(item, sourceArray);
+			removeItemFromArray(item, filteredSourceArray);
+		} catch (error) {
+			writeLog('hideTask: ' + error);
+		}
+	};
+
 	var removeItemFromArray = function(item, array) {
 		try {
 			var index = array.indexOf(item);
@@ -1429,7 +1447,7 @@ tbApp.controller('taskboardController', function($scope, $filter, $http) {
 			}
 		},
 		ARCHIVE_FOLDER: {
-			NAME: 'Completed'
+			NAME: ''
 		},
 		TASKNOTE_MAXLEN: 100,
 		DATE_FORMAT: 'dd-MMM',
@@ -1460,7 +1478,7 @@ tbApp.controller('taskboardController', function($scope, $filter, $http) {
 		},
 		COMPLETED: {
 			AFTER_X_DAYS: 7,
-			ACTION: 'ARCHIVE'
+			ACTION: 'HIDE'
 		},
 		AUTO_UPDATE: true,
 		AUTO_START_TASKS: true,
